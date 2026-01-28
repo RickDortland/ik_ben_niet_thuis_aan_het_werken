@@ -14,19 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         switch ($user['rollen']) {
             case 'directie':
-                header("Location: kringloop_centrum_duurzaam/admin/admintaak.php");
+                header("Location: admin/admintaak.php");
                 break;
 
             case 'magazijnmedewerker':
-                header("Location: kringloop_centrum_duurzaam/users/magazijnmedewerker/magazijnmedewerker.php");
+                header("Location: users/magazijnmedewerker/magazijnmedewerker.php");
                 break;
 
             case 'winkelpersoneel':
-                header("Location: kringloop_centrum_duurzaam/users/winkelpersoneel/winkelpersoneel.php");
+                header("Location: users/winkelpersoneel/winkelpersoneel.php");
                 break;
 
             case 'chauffeur':
-                header("Location: kringloop_centrum_duurzaam/users/chauffeur/chauffeur.php");
+                header("Location: users/chauffeur/chauffeur.php");
                 break;
 
             default:
@@ -40,6 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Inloggen</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
 
 <form method="post">
     <h2>Inloggen</h2>
@@ -51,5 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <a href="forgot_password.php">Wachtwoord vergeten?</a>
 
-    <?php if (isset($error)) echo "<p style='color:red'>$error</p>"; ?>
+    <?php if (isset($error)): ?>
+        <p style="color:red; text-align:center;"><?= $error ?></p>
+    <?php endif; ?>
 </form>
+
+</body>
+</html>
