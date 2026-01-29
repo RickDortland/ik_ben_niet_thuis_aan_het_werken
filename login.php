@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         switch ($user['rollen']) {
             case 'directie':
-                header("Location: admin/admintaak.php");
+                header("Location: users/admin/admintaak.php");
                 break;
 
             case 'magazijnmedewerker':
@@ -39,7 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Gebruikersnaam of wachtwoord onjuist";
     }
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
